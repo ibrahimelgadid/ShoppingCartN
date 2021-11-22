@@ -1,0 +1,48 @@
+<% include ../partials/header %> 
+<form action="/users/register" method="post" class="text-center">
+    <div class="row justify-content-center">
+        <div class="col-9">
+            
+            <h3>Register Page</h3>
+            <div class="input-group mt-3">
+                <span class="input-group-text">username</span>
+                <input type="text" name="username" class="form-control" placeholder="inser your username">
+            </div>
+            <% if (errors) { %>
+                <% errors.forEach(err => { %>
+                    <div class="text-danger"><%= err.param ==="username"?err.msg:''%></div>
+                <% }) %>
+            <% } %>
+            <div class="input-group mt-3">
+                <span class="input-group-text">email</span>
+                <input type="text" name="email" class="form-control" placeholder="inser your email">
+            </div>
+            <% if (errors) { %>
+                <% errors.forEach(err => { %>
+                    <div class="text-danger"><%= err.param ==="email"?err.msg:''%></div>
+                <% }) %>
+            <% } %>
+            <div class="input-group mt-3">
+                <span class="input-group-text">password</span>
+                <input type="password" name="password" class="form-control" placeholder="inser your password">
+            </div>
+            <% if (errors) { %>
+                <% errors.forEach(err => { %>
+                    <div class="text-danger"><%= err.param ==="password"?err.msg:''%></div>
+                <% }) %>
+            <% } %>
+            <div class="input-group mt-3">
+                <span class="input-group-text">confirm</span>
+                <input type="password" name="confirm" class="form-control" placeholder="confirm your password">
+            </div>
+            <% if (errors) { %>
+                <% errors.forEach(err => { %>
+                    <div class="text-danger"><%= err.param ==="confirm"?err.msg:''%></div>
+                <% }) %>
+            <% } %>
+            <button type="submit" class="btn btn-success mb-4 mt-3">Register</button>
+            <p>Have account?<a href="/users/login">Login</a></p>
+        </div>
+    </div>
+</form>
+<% include ../partials/footer %> 

@@ -1,0 +1,9 @@
+
+    <% Object.keys(messages).forEach(function (type) { %>
+      <div class="text-<%= type %>">
+
+      <% messages[type].forEach(function (message) { %>
+        <p> <i class="fas <%= type=='success'?'fa-thumbs-up':'fa-thumbs-down' %>"></i> <%= message %></p>
+      <% }) %>
+      </div>
+    <% }) %>
